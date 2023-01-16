@@ -17,6 +17,23 @@ ECG is the process of recording the heart’s electrical activity. The ECG is a 
 
 ## 2.0 DATA
 
-PTB-XL data set is a large freely accessible clinical 12-Lead ECG waveform data, comprising of 21799 records from 18869 patients of 10 seconds long [2]. The data comprised of the raw signal data and a corresponding general metadata file. A detailed description of the data set and a source to the dataset is provided in the link below:
+PTB-XL data set is a large freely accessible clinical 12-Lead ECG waveform data, comprising of 21799 records from 18869 patients of 10 seconds long[^2]. The data comprised of the raw signal data and a corresponding general metadata file. A detailed description of the data set and a source to the dataset is provided in the link below:
+
+[PTB-XL Description and Source](https://physionet.org/content/ptb-xl/1.0.3/)
+
+## 3.0 METHOD
+
+Several machine learning (ML) models for ECG analysis have been successfully implemented. Most of these models used traditional ml algorithms and signal processing techniques. Traditional ML models require some prior domain knowledge and expertise to define relevant features. For example, features like the P-wave, QRS Complex and T wave may be required to be used as inputs to the model. Thus, feature engineering is an important step to transform the raw data in to the relevant feature representation[^3]. To eliminate the need for domain knowledge feature extraction a deep learning model, in particular 1D-CNN (Convolutional Neural Network), is used on this project. A 1D-CNN, Kernel slides along one dimension. A 1D-CNN is an appropriate tool for the ECG analysis as the date is two dimensional and moves along the time axis.
+
+## 4.0 DATA WRANGLING
+
+[DATA WRANGLING](/01_DataWrangling.ipynb)
+
+The PTB-XL database, which contains the metadata of all ECG records was imported from the local drive (The dataset was downloaded and save locally from [here](https://physionet.org/content/ptb-xl/1.0.3/)). The figure below shows a plot of the missing values. Columns with severely missing data were dropped. The final cleaned data set was save as a new file for future use.
 
 [^1]: *Wikipedia, "Electrocardiography," [Online]. Available: https://en.wikipedia.org/w/index.php?title=Electrocardiography&oldid=1132924386.*
+
+[^2]: *P. Wagner, N. Strodthoff, R.-D. Bousseljot, D. Kreiseler, F. I. Lunze, W. Samek and T. Schaeffter, "PTB-XL, a large publicly available electrocardiography dataset," Nature, [Online]. Available: https://doi.org/10.1038/s41597-020-0495-6.*
+
+[^3]: *A. Peimankar and S. Puthusserypady, "DENS-ECG-A deep learning approach for ECG signal delineation," ELSEVIER, vol. 165, 2021*
+
