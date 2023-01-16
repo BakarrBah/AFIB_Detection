@@ -34,6 +34,8 @@ The PTB-XL database, which contains the metadata of all ECG records was imported
 
 ## 5.0 EXPLORATORY DATA ANALYSIS
 
+[EDA](/02_EDA.ipynb)
+
 The figure below shows a plot of the heart rhythm Vs. number of ECG records. The data is imbalanced and may impact the result of the model. Consideration should be given to rebalance the data.
 
 ![Heart Rythm](/images/ECG_HeartRhythm.png)
