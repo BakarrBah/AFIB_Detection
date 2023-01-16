@@ -11,6 +11,12 @@ Early detection is important to reduce the risks of A-fib related complications.
 
 ## 1.1 Electrocardiography (ECG)
 
-ECG is the process of recording the heart’s electrical activity. The ECG is a graph of the voltage versus time of the heart electrical activity using electrodes place on the skin [1]. In a 12-lead ECG, ten electrodes are placed on the patient’s limbs and on the surface of the chest. This configuration allows for the magnitude of the heart electric potential to be measured from twelve different angles (leads). Figure 1 shows an illustration of the relevant components of the conduction system, the heart, and the classical ECG Waveforms.
+ECG is the process of recording the heart’s electrical activity. The ECG is a graph of the voltage versus time of the heart electrical activity using electrodes place on the skin [1]. In a 12-lead ECG, ten electrodes are placed on the patient’s limbs and on the surface of the chest. This configuration allows for the magnitude of the heart electric potential to be measured from twelve different angles (leads). Teh figure below shows an illustration of the relevant components of the conduction system, the heart, and the classical ECG Waveforms.
 
 ![ECG IMAGE](/images/ECG2X.png)
+
+## 2.0 DATA
+
+PTB-XL data set is a large freely accessible clinical 12-Lead ECG waveform data, comprising of 21799 records from 18869 patients of 10 seconds long [2]. The data comprised of the raw signal data and a corresponding general metadata file. A detailed description of the data set and a source to the dataset is provided in the link below:[^1]
+
+[^1]: Test
