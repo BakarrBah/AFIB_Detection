@@ -29,7 +29,18 @@ Several machine learning (ML) models for ECG analysis have been successfully imp
 
 [DATA WRANGLING](/01_DataWrangling.ipynb)
 
-The PTB-XL database, which contains the metadata of all ECG records was imported from the local drive (The dataset was downloaded and save locally from [here](https://physionet.org/content/ptb-xl/1.0.3/)). The figure below shows a plot of the missing values. Columns with severely missing data were dropped. The final cleaned data set was save as a new file for future use.
+The PTB-XL database, which contains the metadata of all ECG records was imported from the local drive (The dataset was downloaded and save locally from [here](https://physionet.org/content/ptb-xl/1.0.3/)). The final cleaned data set was saved as a new file for future use. The cleaned database was then used to load the ECG data with a sampling rate of 100 Hz.
+![Missing Data Figure](/images/missing_data.png)
+
+## 5.0 EXPLORATORY DATA ANALYSIS
+
+The figure below shows a plot of the heart rhythm Vs. number of ECG records. The data is imbalanced and may impact the result of the model. Consideration should be given to rebalance the data.
+
+![Heart Rythm](/images/ECG_HeartRhythm.png)
+
+The figure below shows a plot of the number of the Arrhythmia with age. The data shows that younger people tend to have normal heart rhythm but they are also likely to have other arrhythmias. However, older people tend to be more likely to be diagnosed with AFIB. This suggests that adding age to the model may help improve the accuracy of the model.
+
+![Age Heart Rythm](/images/ECG_Age.png)
 
 [^1]: *Wikipedia, "Electrocardiography," [Online]. Available: https://en.wikipedia.org/w/index.php?title=Electrocardiography&oldid=1132924386.*
 
