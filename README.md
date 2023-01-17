@@ -1,5 +1,5 @@
 # **ATRIAL FIBRILATION**
-
+![AFIB](/images/AFIB.png)
 ---
 
 ## 1.0 BACKGROUND
@@ -43,6 +43,14 @@ The figure below shows a plot of the heart rhythm Vs. number of ECG records. The
 The figure below shows a plot of the number of the Arrhythmia with age. The data shows that younger people tend to have normal heart rhythm but they are also likely to have other arrhythmias. However, older people tend to be more likely to be diagnosed with AFIB. This suggests that adding age to the model may help improve the accuracy of the model.
 
 ![Age Heart Rythm](/images/ECG_Age.png)
+
+## 6.0 FEATURE ENGINEERING
+
+[FEATURE ENGINEERING](/03_FeatureEngineering.ipynb)
+
+Even though we know age and sex might impact the result of the tests. For this analysis we will only consider using the ECG data to make the predictions.
+
+
 
 [^1]: *Wikipedia, "Electrocardiography," [Online]. Available: https://en.wikipedia.org/w/index.php?title=Electrocardiography&oldid=1132924386.*
 
