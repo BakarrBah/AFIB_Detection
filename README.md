@@ -30,7 +30,7 @@ Several machine learning (ML) models for ECG analysis have been successfully imp
 [DATA WRANGLING](/01_DataWrangling.ipynb)
 
 The PTB-XL database, which contains the metadata of all ECG records was imported from the local drive (The dataset was downloaded and save locally from [here](https://physionet.org/content/ptb-xl/1.0.3/)). The final cleaned data set was saved as a new file for future use. The cleaned database was then used to load the ECG data with a sampling rate of 100 Hz.
-![Missing Data Figure](/images/missing_data.png)
+![Missing Data Figure](/images/missing_data.png#gh-ligh-mode-only)
 
 ## 5.0 EXPLORATORY DATA ANALYSIS
 
@@ -48,8 +48,42 @@ The figure below shows a plot of the number of the Arrhythmia with age. The data
 
 [FEATURE ENGINEERING](/03_FeatureEngineering.ipynb)
 
-Even though we know age and sex might impact the result of the tests. For this analysis we will only consider using the ECG data to make the predictions.
+Age and sex of a person might have an impact on a patient arrythmia diagnosis. But for this model only the ECG signals will be considered.
 
+## 7.0 MODELING
+
+[MODELING](/04_Modeling.ipynb)
+
+A simple four-layer Conv1D sequential network with 32 filters was used. Below is the code to generate the model.
+
+~~~python
+    model = Sequential()
+    model.add(Conv1D(filters= 32, kernel_size = 3, activation = 'relu', input_shape = input_shape))
+    model.add(MaxPooling1D(3, 3))
+
+    model.add(Conv1D(filters= 64, kernel_size = 3, activation = 'relu'))
+    model.add(MaxPooling1D(3, 3))
+
+    model.add(Conv1D(filters= 64, kernel_size = 3, activation = 'relu'))
+    model.add(MaxPooling1D(3, 3))
+
+    model.add(Conv1D(filters= 128, kernel_size = 3, activation = 'relu'))
+    model.add(Flatten())
+
+model.add(Dense(3, activation= 'softmax'))
+~~~
+
+## PREDICTIONS
+
+The figure below shows the confusion matrix of the predictions. The data shows that the model correctly diagnosed 87.6% of the AFIB patients. This is pretty good for a simple model like this. Especially considering that the model will misdiagnosed only 1% and 4% of Normal and other arrythmias respectively.
+
+![Confusion Matrix](/images/confusion_matrix.png)
+
+## FEATURE IMPROVEMENT
+
+- The model could be improved by rebalancing the dataset.
+- Including age and sex could significantly improve the dataset as set.
+- Increase the complexity of the model, either by adding more layers or adding Long Short Term (LSTM) to the model
 
 
 [^1]: *Wikipedia, "Electrocardiography," [Online]. Available: https://en.wikipedia.org/w/index.php?title=Electrocardiography&oldid=1132924386.*
